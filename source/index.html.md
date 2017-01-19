@@ -1,5 +1,5 @@
 ---
-title: API Reference
+title: EchidnAPI
 
 language_tabs:
   - shell
@@ -8,8 +8,9 @@ language_tabs:
   - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='https://github.com/LoganMazza'>Modified by Logan Mazza</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
+  - <a href='#'>Sign Up for a Developer Key</a>
 
 includes:
   - errors
@@ -19,80 +20,80 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to EchidnAPI! You can use my API to access EchidnAPI endpoints, which can get information on various echidnas.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+Echidnas are monotremes, which make them, along with fellow monotremes the platypus, unique among other mammals in the world in that they lay eggs and lack many of the traditional "mammal" characteristics. 
 
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+There are language bindings in JS, Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs at the top right.
 
 # Authentication
 
 > To authorize, use this code:
 
 ```ruby
-require 'kittn'
+require 'echid'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+api = EchidnAPI::APIClient.authorize!('grrgrr')
 ```
 
 ```python
-import kittn
+import echid
 
-api = kittn.authorize('meowmeowmeow')
+api = echid.authorize('grrgrr')
 ```
 
 ```shell
 # With shell, you can just pass the correct header with each request
 curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+  -H "Authorization: grrgrr"
 ```
 
 ```javascript
-const kittn = require('kittn');
+const echid = require('echid');
 
-let api = kittn.authorize('meowmeowmeow');
+let api = echid.authorize('grrgrr');
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+> Make sure to replace `grrgrr` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+EchidnAPI uses API keys to allow access to the API. You can register a new EchidnAPI key at our [developer portal](http://example.com/developers).
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+EchidnAPI expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
-`Authorization: meowmeowmeow`
+`Authorization: grrgrr`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>grrgrr</code> with your personal API key.
 </aside>
 
-# Kittens
+# Echidnas
 
-## Get All Kittens
+## Get All Echidnas
 
 ```ruby
-require 'kittn'
+require 'echid'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
+api = EchidnAPI::APIClient.authorize!('grrgrr')
+api.echidnas.get
 ```
 
 ```python
-import kittn
+import echid
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
+api = echid.authorize('grrgrr')
+api.echidnas.get()
 ```
 
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
+curl "http://example.com/api/echidnas"
+  -H "Authorization: grrgrr"
 ```
 
 ```javascript
-const kittn = require('kittn');
+const echid = require('echid');
 
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+let api = echid.authorize('grrgrr');
+let echidnas = api.echidnas.get();
 ```
 
 > The above command returns JSON structured like this:
@@ -101,64 +102,64 @@ let kittens = api.kittens.get();
 [
   {
     "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
+    "name": "Knuckles",
+    "breed": "unknown",
+    "weirdness": 8,
+    "has_knuckles": 1
   },
   {
     "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+    "name": "Pokey",
+    "breed": "short-beaked",
+    "weirdness": 10,
+    "has_knuckles": 0
   }
 ]
 ```
 
-This endpoint retrieves all kittens.
+This endpoint retrieves all echidnas currently in the database.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET http://example.com/api/echidnas`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+include_monotremes | false | If set to true, the result will also include platypi.
+captive | true | If set to false, the result will include echidnas and/or platypi that have already been released.
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Remember — echidnas will burrow when threatened, so make sure you authenticate correctly!
 </aside>
 
-## Get a Specific Kitten
+## Get a Specific Echidna
 
 ```ruby
-require 'kittn'
+require 'echid'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
+api = EchidnAPI::APIClient.authorize!('grrgrr')
+api.echidnas.get(2)
 ```
 
 ```python
-import kittn
+import echid
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
+api = echid.authorize('grrgrr')
+api.echidnas.get(2)
 ```
 
 ```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
+curl "http://example.com/api/echidnas/2"
+  -H "Authorization: grrgrr"
 ```
 
 ```javascript
-const kittn = require('kittn');
+const echid = require('echid');
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+let api = echid.authorize('grrgrr');
+let pokey = api.echidnas.get();
 ```
 
 > The above command returns JSON structured like this:
@@ -166,24 +167,22 @@ let max = api.kittens.get(2);
 ```json
 {
   "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "name": "Pokey",
+  "breed": "short-beaked",
+  "weirdness": 10,
+  "has_knuckles": 0
 }
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+This endpoint retrieves a specific echidna from the database.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET http://example.com/echidnas/<ID>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to retrieve
+ID | The ID of the echidna to retrieve
 
